@@ -3,11 +3,34 @@ layer: L1
 version: 0.1.0
 repo: https://github.com/NeuruhAI/core-node-ffdb
 doi: pending
+artifact_sha256: pending_first_release
+
 depends_on:
   - ether-layer@0.1.0
+
 used_by:
   - NATL
   - Signal-IQ
   - TaxShield
+
 status: scaffolded
 cites: https://github.com/NeuruhAI/aegis
+
+contract:
+  invoke_input: https://github.com/NeuruhAI/aegis/contracts/ffdb-invoke-in@0.1.0.schema.json
+  invoke_output: https://github.com/NeuruhAI/aegis/contracts/ffdb-invoke-out@0.1.0.schema.json
+  requires_idempotency_key: true
+  commit_semantics: quorum_or_throw    # no partial-success state
+
+capabilities:
+  read_pii: true
+  network_egress: [supabase.co, tailnet]
+  cost_per_invocation_usd: 0.0002
+  latency_p99_ms: 80
+  compliance_scopes: [soc2_cc6.1, soc2_cc6.7, soc2_cc7.2]
+  destructive: false
+
+sovereignty:
+  runs_on: [local, managed]
+  data_residency: [tailnet, supabase_us_east_1]
+  air_gap_capable: true
