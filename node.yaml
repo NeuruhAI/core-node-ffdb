@@ -1,0 +1,13 @@
+node: ffdb
+layer: L1
+version: 0.1.0
+repo: https://github.com/NeuruhAI/core-node-ffdb
+doi: pending
+depends_on:
+  - ether-layer@0.1.0
+used_by:
+  - NATL
+  - Signal-IQ
+  - TaxShield
+status: scaffolded
+cites: https://github.com/NeuruhAI/aegis
