@@ -20,7 +20,7 @@ contract:
   invoke_input: https://github.com/NeuruhAI/aegis/contracts/ffdb-invoke-in@0.1.0.schema.json
   invoke_output: https://github.com/NeuruhAI/aegis/contracts/ffdb-invoke-out@0.1.0.schema.json
   requires_idempotency_key: true
-  commit_semantics: quorum_or_throw    # no partial-success state
+  commit_semantics: quorum_or_throw
 
 capabilities:
   read_pii: true
